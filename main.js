@@ -7,9 +7,12 @@ fetch("http://localhost:3000/FoodChoices")
     const proteinChoicesDiv = document.querySelector("#proteinChoicesDiv");
     foodChoices.forEach(foodChoice => {
         if (foodChoice.type === "PROTEIN") {
-            let proteinChoice1 = document.createElement('p');
-            proteinChoice1.textContent = foodChoice.title;
-            proteinChoicesDiv.appendChild(proteinChoice1);
+            let proteinChoice = document.createElement('p');
+            proteinChoice.textContent = foodChoice.title;
+            proteinChoicesDiv.appendChild(proteinChoice);
+            let proteinRadioButton = document.createElement('input');
+            proteinRadioButton.setAttribute("type", "radio");
+            proteinChoice.appendChild(proteinRadioButton);
         }
     })
 })
