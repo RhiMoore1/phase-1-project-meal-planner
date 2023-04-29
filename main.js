@@ -12,6 +12,7 @@ fetch("http://localhost:3000/FoodChoices")
             proteinChoicesDiv.appendChild(proteinChoice);
             let proteinRadioButton = document.createElement('input');
             proteinRadioButton.setAttribute("type", "radio");
+            proteinRadioButton.name = "protein"
             proteinChoice.appendChild(proteinRadioButton);
         }
     })
