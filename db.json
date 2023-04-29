@@ -1,0 +1,94 @@
+{
+    "FoodChoices": [
+        {
+            "id": 1,
+            "title": "Chicken",
+            "summary": "Grilled Chicken",
+            "type": "PROTEIN"
+        },
+        {
+            "id": 2,
+            "title": "Beef",
+            "summary": "Sauteed Beef",
+            "type": "PROTEIN"
+        },
+        {
+            "id": 3,
+            "title": "Fish",
+            "summary": "Fried Fish",
+            "type": "PROTEIN"
+        },
+        {
+            "id": 4,
+            "title": "Pasta",
+            "summary": "Pasta",
+            "type": "CARB"
+        },
+        {
+            "id": 5,
+            "title": "Roll",
+            "summary": "Roll",
+            "type": "CARB"
+        },
+        {
+            "id": 6,
+            "title": "Rice",
+            "summary": "Rice",
+            "type": "CARB"
+        },
+        {
+            "id": 7,
+            "title": "Sweet Potato",
+            "summary": "Sweet Potato",
+            "type": "VEGGIE"
+        },
+        {
+            "id": 8,
+            "title": "Spinach",
+            "summary": "Spinach",
+            "type": "VEGGIE"
+        },
+        {
+            "id": 9,
+            "title": "Squash",
+            "summary": "Squash",
+            "type": "VEGGIE"
+        },
+        {
+            "id": 10,
+            "title": "Strawberries",
+            "summary": "Strawberries",
+            "type": "FRUIT"
+        },
+        {
+            "id": 11,
+            "title": "Pineapple",
+            "summary": "Pineapple",
+            "type": "FRUIT"
+        },
+        {
+            "id": 12,
+            "title": "Grapes",
+            "summary": "Grapes",
+            "type": "FRUIT"
+        },
+        {
+            "id": 13,
+            "title": "Brownie",
+            "summary": "Brownie",
+            "type": "DESSERT"
+        },
+        {
+            "id": 14,
+            "title": "Angel Food Cake",
+            "summary": "Angel Food Cake",
+            "type": "DESSERT"
+        },
+        {
+            "id": 15,
+            "title": "Sugar Cookie",
+            "summary": "Sugar Cookie",
+            "type": "DESSERT"
+        }
+    ]
+}
