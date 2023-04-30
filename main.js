@@ -64,9 +64,9 @@ fetch("http://localhost:3000/FoodChoices")
 
 
 const form = document.querySelector("form");
+let selectedRadioButtonsArray = [];
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    let selectedRadioButtonsArray = [];
 
     let proteinDataArray = document.querySelectorAll('input[type="radio"][name="protein"]');
     let carbDataArray = document.querySelectorAll('input[type="radio"][name="carb"]');
@@ -115,5 +115,5 @@ form.addEventListener('submit', (e) => {
         }
     }
     console.log(selectedRadioButtonsArray); 
-    return selectedRadioButtonsArray;
 })
+
