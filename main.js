@@ -102,7 +102,9 @@ form.addEventListener('submit', (e) => {
     console.log(selectedRadioButtonsArray); 
 
     const textArea = document.getElementById('textAreaFoodArray');
-    textArea.textContent = selectedRadioButtonsArray.join('\n');
+    if (textArea.innerHTML === '') {
+        textArea.textContent = selectedRadioButtonsArray.join('\n');
+    }  
 })
 
 
