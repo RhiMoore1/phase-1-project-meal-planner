@@ -11,57 +11,30 @@ fetch("http://localhost:3000/FoodChoices")
     const dessertChoicesDiv = document.querySelector("#dessertChoicesDiv");
 
     
-    foodChoices.forEach(foodChoice => {
-        if (foodChoice.type === "PROTEIN") {
-            let proteinChoice = document.createElement('p');
-            proteinChoice.textContent = foodChoice.title;
-            proteinChoicesDiv.appendChild(proteinChoice);
-            let proteinRadioButton = document.createElement('input');
-            proteinRadioButton.setAttribute("type", "radio");
-            proteinRadioButton.name = "protein";
-            proteinRadioButton.value = foodChoice.title;
-            proteinChoice.appendChild(proteinRadioButton);
-        } else if(foodChoice.type === "CARB") {
-            let carbChoice = document.createElement('p');
-            carbChoice.textContent = foodChoice.title;
-            carbChoicesDiv.appendChild(carbChoice);
-            let carbRadioButton = document.createElement('input');
-            carbRadioButton.setAttribute("type", "radio");
-            carbRadioButton.name = "carb";
-            carbRadioButton.value = foodChoice.title;
-            carbChoice.appendChild(carbRadioButton);
-        }   else if(foodChoice.type === "VEGGIE") {
-            let veggieChoice = document.createElement('p');
-            veggieChoice.textContent = foodChoice.title;
-            veggieChoicesDiv.appendChild(veggieChoice);
-            let veggieRadioButton = document.createElement('input');
-            veggieRadioButton.setAttribute("type", "radio");
-            veggieRadioButton.name = "veggie"
-            veggieChoice.appendChild(veggieRadioButton);
-            veggieRadioButton.value = foodChoice.title;
-        }   else if(foodChoice.type === "FRUIT") {
-            let fruitChoice = document.createElement('p');
-            fruitChoice.textContent = foodChoice.title;
-            fruitChoicesDiv.appendChild(fruitChoice);
-            let fruitRadioButton = document.createElement('input');
-            fruitRadioButton.setAttribute("type", "radio");
-            fruitRadioButton.name = "fruit"
-            fruitChoice.appendChild(fruitRadioButton);
-            fruitRadioButton.value = foodChoice.title;
-        }   else if(foodChoice.type === "DESSERT") {
-            let dessertChoice = document.createElement('p');
-            dessertChoice.textContent = foodChoice.title;
-            dessertChoicesDiv.appendChild(dessertChoice);
-            let dessertRadioButton = document.createElement('input');
-            dessertRadioButton.setAttribute("type", "radio");
-            dessertRadioButton.name = "dessert"
-            dessertChoice.appendChild(dessertRadioButton);
-            dessertRadioButton.value = foodChoice.title;
+    foodChoices.forEach(mainFoodType => {
+        function foodChoiceDivGenerator(parentDiv, foodType) {
+            let foodChoice = document.createElement('p');
+            foodChoice.textContent = mainFoodType.title;
+            parentDiv.appendChild(foodChoice);
+            let foodRadioButton = document.createElement('input');
+            foodRadioButton.setAttribute("type", "radio");
+            foodRadioButton.name = foodType;
+            foodRadioButton.value = mainFoodType.title;
+            foodChoice.appendChild(foodRadioButton);
+        }
+        if (mainFoodType.type === "PROTEIN") {
+            foodChoiceDivGenerator(proteinChoicesDiv, 'protein')
+        } else if(mainFoodType.type === "CARB") {
+            foodChoiceDivGenerator(carbChoicesDiv, 'carb')
+        } else if(mainFoodType.type === "VEGGIE") {
+            foodChoiceDivGenerator(veggieChoicesDiv, 'veggie')
+        } else if(mainFoodType.type === "FRUIT") {
+            foodChoiceDivGenerator(fruitChoicesDiv, 'fruit')
+        } else if(mainFoodType.type === "DESSERT") {
+            foodChoiceDivGenerator(dessertChoicesDiv, 'dessert')
         }
     })
 })
-
-
 
 
 const form = document.querySelector("form");
