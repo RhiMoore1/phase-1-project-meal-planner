@@ -100,9 +100,9 @@ form.addEventListener('submit', (e) => {
         }
     }
     console.log(selectedRadioButtonsArray); 
-    
+
     const textArea = document.getElementById('textAreaFoodArray');
-    textArea.textContent = selectedRadioButtonsArray;
+    textArea.textContent = selectedRadioButtonsArray.join('\n');
 })
 
 
