@@ -75,45 +75,43 @@ form.addEventListener('submit', (e) => {
     let dessertDataArray = document.querySelectorAll('input[type="radio"][name="dessert"]');
 
     for (let i = 0; i < proteinDataArray.length; i++) {
-        if (proteinDataArray[i].checked) {
-            
-           //console.log(proteinDataArray[i].value);
+        if (proteinDataArray[i].checked) {   
            selectedRadioButtonsArray.push(proteinDataArray[i].value);
-           console.log(selectedRadioButtonsArray)
         }
     }
     for (let i = 0; i < carbDataArray.length; i++) {
         if (carbDataArray[i].checked) {
-            
-           //console.log(carbDataArray[i].value);
            selectedRadioButtonsArray.push(carbDataArray[i].value);
-           console.log(selectedRadioButtonsArray)
         }
     }
     for (let i = 0; i < veggieDataArray.length; i++) {
         if (veggieDataArray[i].checked) {
-            
-           //console.log(veggieDataArray[i].value);
            selectedRadioButtonsArray.push(veggieDataArray[i].value);
-           console.log(selectedRadioButtonsArray)
         }
     }
     for (let i = 0; i < fruitDataArray.length; i++) {
         if (fruitDataArray[i].checked) {
-            
-           //console.log(fruitDataArray[i].value);
            selectedRadioButtonsArray.push(fruitDataArray[i].value);
-           console.log(selectedRadioButtonsArray)
         }
     }
     for (let i = 0; i < dessertDataArray.length; i++) {
         if (dessertDataArray[i].checked) {
-        
-           //console.log(dessertDataArray[i].value);
            selectedRadioButtonsArray.push(dessertDataArray[i].value);
-           console.log(selectedRadioButtonsArray)
         }
     }
     console.log(selectedRadioButtonsArray); 
+    
+    const textArea = document.getElementById('textAreaFoodArray');
+    textArea.textContent = selectedRadioButtonsArray;
 })
+
+
+
+
+
+
+
+
+
+
 
