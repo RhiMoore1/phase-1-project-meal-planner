@@ -63,47 +63,18 @@ fetch("http://localhost:3000/FoodChoices")
 
 
 
+
 const form = document.querySelector("form");
 let selectedRadioButtonsArray = [];
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    let proteinDataArray = document.querySelectorAll('input[type="radio"][name="protein"]');
-    let carbDataArray = document.querySelectorAll('input[type="radio"][name="carb"]');
-    let veggieDataArray = document.querySelectorAll('input[type="radio"][name="veggie"]');
-    let fruitDataArray = document.querySelectorAll('input[type="radio"][name="fruit"]');
-    let dessertDataArray = document.querySelectorAll('input[type="radio"][name="dessert"]');
-
-    for (let i = 0; i < proteinDataArray.length; i++) {
-        if (proteinDataArray[i].checked) {   
-           selectedRadioButtonsArray.push(proteinDataArray[i].value);
-        }
-    }
-    for (let i = 0; i < carbDataArray.length; i++) {
-        if (carbDataArray[i].checked) {
-           selectedRadioButtonsArray.push(carbDataArray[i].value);
-        }
-    }
-    for (let i = 0; i < veggieDataArray.length; i++) {
-        if (veggieDataArray[i].checked) {
-           selectedRadioButtonsArray.push(veggieDataArray[i].value);
-        }
-    }
-    for (let i = 0; i < fruitDataArray.length; i++) {
-        if (fruitDataArray[i].checked) {
-           selectedRadioButtonsArray.push(fruitDataArray[i].value);
-        }
-    }
-    for (let i = 0; i < dessertDataArray.length; i++) {
-        if (dessertDataArray[i].checked) {
-           selectedRadioButtonsArray.push(dessertDataArray[i].value);
-        }
-    }
-    console.log(selectedRadioButtonsArray); 
+   const formData = Object.fromEntries(new FormData(e.target));
+   console.log(formData);
 
     const textArea = document.getElementById('textAreaFoodArray');
     if (textArea.innerHTML === '') {
-        textArea.textContent = selectedRadioButtonsArray.join('\n');
+        textArea.textContent = Object.values(formData).join('\n');
     }  
 })
 
